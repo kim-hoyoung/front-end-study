@@ -3,6 +3,7 @@ console.log("chapter 4");
 // 1. 변수
 let age = 27;
 //console.log(age);
+console.log(age);
 
 age = 30;
 //console.log(age);

@@ -18,6 +18,7 @@ const person = {
   name: "김호영",
   // 메서드 선언
   sayHi() {
+    // 객체의 동작을 하기 위함.
     console.log("안녕!");
   },
 };
