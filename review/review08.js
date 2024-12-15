@@ -1,4 +1,4 @@
-// Date 객체
+// 내장 객체 Date 객체
 
 let myDate0 = new Date();
 
@@ -32,3 +32,25 @@ console.log(myDate5.getTime());
 // 타임 스태프라는 메서드
 
 // 요일은 0부터 6까지 요일의 수가 있음.
+
+// 오늘 날짜로 부터 D-day + 날짜 구하기
+
+// 오늘은 2024 - 12 - 16
+// 시작 날짜는 2024 - 01 - 20
+
+let today = new Date(2024, 11, 24);
+let startDay = new Date(2024, 0, 20);
+
+function dayPlus(startDate) {
+  let dDay = today.getTime() - startDate.getTime();
+  //let startDate = setDate(startDate);
+  dDay = dDay / 1000 / 60 / 60 / 24;
+
+  console.log(
+    `${startDate.toLocaleDateString()}부터 오늘까지 ${
+      dDay + 1
+    }일 경과하였습니다.`
+  );
+}
+
+dayPlus(startDay);
