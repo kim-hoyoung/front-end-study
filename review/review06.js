@@ -69,6 +69,6 @@ console.log(korea.ceo);
 delete korea.ceo;
 console.log(korea.ceo);
 
-// 확인
+// 확인 ( )
 console.log(korea.name !== undefined);
 console.log("name" in korea);
