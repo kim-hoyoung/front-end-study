@@ -65,3 +65,10 @@ console.log(Math.ceil(2.8));
 console.log(Math.random());
 console.log(Math.random());
 console.log(Math.random());
+
+// 바보 자바스크립트
+let sum = 0.1 + 0.2;
+
+console.log(Number(sum.toFixed(1)));
+console.log(+sum.toFixed(1));
+console.log(Math.round(sum * 10) / 10);
