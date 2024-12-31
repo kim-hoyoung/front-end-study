@@ -8,6 +8,7 @@ function isPalindrome(word) {
 
   // 3. 문자열 비교
   if (normalWord.join("") === reverseWord.join("")) {
+    // 배열을 다시 문자열로 변환합니다.
     return true; // 회문이면 true
   } else {
     return false; // 아니면 false
