@@ -12,4 +12,5 @@ function calculateChange(payment, cost) {
 
 calculateChange(100000, 33000);
 console.log("");
+
 calculateChange(500000, 378000);
