@@ -5,7 +5,7 @@
 // 객체지향 프로그래밍은
 // 프로퍼티와 메소드로 이루어진 각 객체들의 상호작용을 중심으로 코드를 작성하는 것.
 
-// Object Literal (객체 문자열)
+// Object Literal (객체 문자열)-------------------------------------------
 // 객체의 상태를 담고 있는 변수들을 프로퍼티라고 함.
 
 const user = {
@@ -27,7 +27,7 @@ console.log(user.birthday);
 user.buy(item);
 
 // 만일 수십 수백개의 객체를 만들어야하는 상황에서는 어떻게 해야 하나?
-// Factory Function
+// Factory Function-----------------------------------------------------
 function createUser(email, birthdate) {
   const user1 = {
     email: email,
@@ -53,7 +53,7 @@ user2.buy(item);
 user3.buy(item);
 user4.buy(item);
 
-// Constructorr Function (생성자 함수)
+// Constructorr Function (생성자 함수) ------------------------------------
 // 함수를 사용해서 객체를 생성하는 것
 // 객체 생성을 목적으로 하는 함수 명은 대문자로 시작하는 관습이 있다.
 function User(email, birthdate) {
