@@ -11,24 +11,25 @@ arr1.forEach(function (item, idx, arr) {
 let doubledArr = [];
 
 arr1.forEach((item) => {
+  console.log("호영테스트:");
   doubledArr.push(item * 2);
 });
 
-//console.log(doubledArr);
+console.log(doubledArr);
 
 // 2. includes,
 // 배열에 특정 요소가 있는지 확인하는 메서드
 let arr2 = [1, 2, 3];
 let isInclude = arr2.includes(10);
-//console.log(isInclude);
+console.log(isInclude);
 
 // 3. indexOf
 // 특정 요소의 인덱스(위치)를 찾아서 반환하는 메서드
 // 배열에 찾으려는 값이 여러개 존재한다면 가장 첫 번째 요소의 인덱스를 반환
 let arr3 = [1, 2, 3];
-let index = arr3.indexOf(20);
+let index = arr3.indexOf(1);
 // 존재하지 않으면 -1 을 반환
-// console.log(index);
+console.log(index);
 
 // 4. findIndex
 // 모든 요소를 순회하면서, 콜백함수를 만족하는 메서드
