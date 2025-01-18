@@ -31,16 +31,13 @@ console.log(isPrimeNumber(12));
 
 function add(num1, num2) {
   return num1 + num2;
-  operation();
 }
 
 function subtract(num1, num2) {
   return num1 - num2;
-  operation();
 }
 
 function calculate(num1, num2, operation) {
-  console.log("출력결과 :");
   console.log(operation(num1, num2));
 }
 
