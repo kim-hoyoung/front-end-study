@@ -1,11 +1,10 @@
 import "./App.css";
-
-import Register from "./components/Register";
+import OrderEditor from "./components/OrderEditor";
 
 function App() {
   return (
     <>
-      <Register />
+      <OrderEditor />
     </>
   );
 }
