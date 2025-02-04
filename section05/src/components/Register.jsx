@@ -17,15 +17,15 @@ const Register = () => {
   const countRef = useRef(0);
   const inputRef = useRef();
 
-  let count = 0;
+  //let count = 0;
 
   const onChange = (e) => {
     //console.log(e.target.name, e.target.value);
     //countRef.current++;
 
-    count++;
+    //count++;
     // console.log(countRef.current);
-    console.log(count);
+    //console.log(count);
     setInput({
       ...input,
       [e.target.name]: e.target.value,
