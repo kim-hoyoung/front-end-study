@@ -1,0 +1,7 @@
+.App {
+  width: 500px;
+  margin: 0 auto;
+  display: flex; /* App이라는 ClassName 밑에 있는 자식 요소들의 배치를 좀 더 유연하게 함 */
+  flex-direction: column; /* 열(세로) 방향으로 */
+  gap: 10px; /* 각 간격  display 가 flex일 때만 설정할 수 있음. */
+}

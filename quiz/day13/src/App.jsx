@@ -11,6 +11,7 @@ function App() {
 
   // 환율
   const onChange = (currency, input) => {
+    1;
     if (currency === "krw") {
       setState({
         krw: input,
