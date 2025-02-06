@@ -27,6 +27,7 @@ const List = ({ todos, onUpdate, onDelete }) => {
         onChange={onChangeSearch}
         placeholder="검색어를 입력하세요."
       ></input>
+
       <div className="todos_wrapper">
         {filteredTodos.map((todo) => {
           return (
