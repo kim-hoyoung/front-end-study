@@ -1,10 +1,11 @@
 import "./ContactItem.css";
+import { memo } from "react";
 
 const ContactItem = ({ id, name, contact, deleteContact }) => {
   const onClickDeleteButton = () => {
     deleteContact(id);
   };
-  console.log(name, contact);
+  console.log("이름: " + name, "연락처: " + contact);
   return (
     <div className="ContactItem">
       <div className="name">{name}</div>
@@ -14,4 +15,4 @@ const ContactItem = ({ id, name, contact, deleteContact }) => {
   );
 };
 
-export default ContactItem;
+export default memo(ContactItem);

@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState, useRef, useReducer } from "react";
+import { useState, useRef, useReducer, useCallback } from "react";
 import Header from "./components/Header";
 import Editor from "./components/Editor";
 import List from "./components/List";
@@ -44,7 +44,7 @@ function App() {
   const [todos, dispatch] = useReducer(reducer, mockData);
   const idRef = useRef(3);
 
-  const onCreate = (content) => {
+  const onCreate = useCallback((content) => {
     dispatch({
       type: "CREATE",
       data: {
@@ -54,20 +54,22 @@ function App() {
         date: new Date().getTime(),
       },
     });
-  };
+  }, []);
 
-  const onUpdate = (targetId) => {
+  const onUpdate = useCallback((targetId) => {
     dispatch({
       type: "UPDATE",
       targetId: targetId,
     });
-  };
-  const onDelete = (targetId) => {
+  }, []);
+
+  const onDelete = useCallback((targetId) => {
     dispatch({
       type: "DELETE",
       targetId: targetId,
     });
-  };
+  }, []);
+
   return (
     <div className="App">
       <Header />
@@ -78,3 +80,11 @@ function App() {
 }
 
 export default App;
+
+// 최적화는 언제 할까? 얼마나 해야할까?
+
+// 언제 : 하나의 프로젝트를 거의 완성한 상태에서 진행하게 됨,
+// 기능 구현 완료 후 -> 마지막에 최적화하는 것이 좋아요~!
+
+// 어떠한 것들? : 꼭 최적화가 필요할 것 같은 연산, 함수, 컴포넌트에 적용하는게 좋다.
+// 최적화가 꼭 되어야 할 것 같은 애들만.

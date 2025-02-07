@@ -1,5 +1,5 @@
 import "./ContactEditor.css";
-import { useState, useRef } from "react";
+import { useState, useRef, useCallback, memo } from "react";
 
 const ContactEditor = ({ addContact }) => {
   const [name, setName] = useState("");
@@ -8,13 +8,15 @@ const ContactEditor = ({ addContact }) => {
   const nameRef = useRef();
   const contactRef = useRef();
 
-  const onChangeName = (e) => {
+  const onChangeName = useCallback((e) => {
+    console.log(" Name 입력 리렌더링확인");
     setName(e.target.value);
-  };
+  }, []);
 
-  const onChangeContact = (e) => {
+  const onChangeContact = useCallback((e) => {
+    console.log("Contact 리렌더링확인");
     setContact(e.target.value);
-  };
+  }, []);
 
   const onSubmit = () => {
     if (name === "") {
@@ -53,4 +55,4 @@ const ContactEditor = ({ addContact }) => {
   );
 };
 
-export default ContactEditor;
+export default memo(ContactEditor);
