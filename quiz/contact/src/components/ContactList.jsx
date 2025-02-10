@@ -1,8 +1,10 @@
 import "./ContactList.css";
 import ContactItem from "./ContactItem";
-import { memo, useRef, useEffect } from "react";
+import { memo, useRef, useEffect, useContext } from "react";
+import { ContactStateContext } from "../App";
 
-const ContactList = ({ contacts, deleteContact }) => {
+const ContactList = () => {
+  const contacts = useContext(ContactStateContext);
   const countList = useRef(0);
   const isFirstRender = useRef(false); // 첫 렌더링 여부를 추적
 
@@ -18,7 +20,7 @@ const ContactList = ({ contacts, deleteContact }) => {
     <div className="ContactList">
       <div className="title">Contact List</div>
       {contacts.map((data) => (
-        <ContactItem key={data.id} {...data} deleteContact={deleteContact} />
+        <ContactItem key={data.id} {...data} />
       ))}
     </div>
   );
