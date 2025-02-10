@@ -29,6 +29,7 @@ export default memo(TodoItem, (prevPorps, nextProps) => {
   // 반환값에 따라, Props가 바뀌었는지 안바뀌었는지 판단
   // T -> Props 바뀌지 않음 -> 리렌더링 x
   // F -> Props 바뀜 -> 리렌더링 o
+  // 잘 기억하자
 
   if (prevPorps.id !== nextProps.id) return false;
   if (prevPorps.isDone !== nextProps.isDone) return false;
