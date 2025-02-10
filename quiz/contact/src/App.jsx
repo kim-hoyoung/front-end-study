@@ -1,5 +1,5 @@
 import "./App.css";
-import { useRef, useReducer, useCallback } from "react";
+import { useRef, useReducer, useCallback, createContext, useMemo } from "react";
 import ContactEditor from "./components/ContactEditor";
 import ContactList from "./components/ContactList";
 
@@ -14,10 +14,14 @@ function reducer(state, action) {
   }
 }
 
+export const ContactStateContext = createContext();
+export const ContactDispatchContext = createContext();
+
 function App() {
   const [contacts, dispatch] = useReducer(reducer, []);
   const idRef = useRef(0);
 
+  // 연락처 추가
   const addContact = useCallback((name, contact) => {
     dispatch({
       type: "ADD",
@@ -29,6 +33,7 @@ function App() {
     });
   }, []);
 
+  // 연락처 삭제
   const deleteContact = useCallback((targetId) => {
     dispatch({
       type: "DELETE",
@@ -36,15 +41,26 @@ function App() {
     });
   }, []);
 
+  const memoizedDispatch = useMemo(() => {
+    return {
+      addContact,
+      deleteContact,
+    };
+  }, []);
+
   return (
     <div className="App">
       <h2>Contact List</h2>
-      <section>
-        <ContactEditor addContact={addContact} />
-      </section>
-      <section>
-        <ContactList contacts={contacts} deleteContact={deleteContact} />
-      </section>
+      <ContactStateContext.Provider value={contacts}>
+        <ContactDispatchContext.Provider value={memoizedDispatch}>
+          <section>
+            <ContactEditor />
+          </section>
+          <section>
+            <ContactList />
+          </section>
+        </ContactDispatchContext.Provider>
+      </ContactStateContext.Provider>
     </div>
   );
 }
