@@ -1,4 +1,3 @@
-<h1>React, javaScript 공부</h1> </h1>
+<h1>Learning React, JavaScript & TypeScript – One commit at a time 📖 </h1>
 
-
-<p>일일 공부</p>
+<p>열심히 꾸준히 복습까지 철저히</p>
