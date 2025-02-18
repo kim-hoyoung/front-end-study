@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "target": "ESNext",
+    "module": "CommonJS",
+    "outDir": "dist",
+    "strict": true, // 엄격 false 비엄격
+    "moduleDetection": "force"
+  },
+  "ts-node": {
+    "esm": true
+  },
+  "include": ["src"]
+}
