@@ -29,7 +29,6 @@ function func4(): null {
 }
 
 //각각 undefined, null 을 return 해줘야 하기 때문.
-
 // never
 // never -> 존재하지 않는
 // 불가능한 타입
