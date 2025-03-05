@@ -25,5 +25,6 @@ function warning(animal: Animal) {
   if ("isBark" in animal) {
     ///강아지
   } else if ("isScratch" in animal) {
+    // 고양이
   }
 }
