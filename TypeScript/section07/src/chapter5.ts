@@ -1,9 +1,6 @@
 /**
  * 프로미스
  */
-
-import { resolve } from "path";
-
 const promise = new Promise<number>((resolve, reject) => {
   setTimeout(() => {
     //resolve(20);
