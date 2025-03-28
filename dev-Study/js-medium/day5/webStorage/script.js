@@ -1,16 +1,19 @@
 // 1. 만두 굿즈 데이터 뿌려주기.
 try {
   const response = await fetch("./mock.json");
-  const mandooShopData = await response.json();
 
-  createShopDataElement(mandooShopData);
+  if (!response.ok) {
+    throw new Error("fetch data is fail");
+  }
+  const item = await response.json();
+
+  createShopDataElement(item);
 } catch (error) {
-  console.log("데이터가 없습니다.");
+  console.error("Network error");
 }
 
 function createShopDataElement(mandooShopData) {
   const ul = document.querySelector("ul");
-
   mandooShopData.forEach((data) => {
     const li = document.createElement("li");
     li.innerHTML = `
@@ -19,7 +22,6 @@ function createShopDataElement(mandooShopData) {
       <span>${data.productPrice}</span>
       <button id="${data.id}">add cart</button>
     `;
-
     // 로컬스토리지에서 기존 장바구니 데이터 가져오기
     const cartData = JSON.parse(localStorage.getItem("cart")) ?? [];
     const newCartData = [...cartData, data];
