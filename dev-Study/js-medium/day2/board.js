@@ -32,7 +32,6 @@ board.showPosts();
 // 2. 자바스크립트 공부 중 🖥️
 
 board.removePost(4);
-
 // 출력:
 // 게시글 삭제: 오늘의 점심은 김치찌개!
 
