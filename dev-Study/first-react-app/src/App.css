@@ -1,14 +1,30 @@
-.page {
-  display: flex;
+body {
+  background-color: #121212; /* 어두운 배경 */
+  color: white; /*글자색 */
+  font-family: Arial, sans-serif; /*폰트*/
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* 최소 높이를 화면 전체 크기로 설정 */
+  display: flex; /* 중앙 정렬위해 flex 박스 사용 */
+  justify-content: center; /* 가로 방향 중앙 정렬 */
+  align-items: center; /* 세로 방향 중앙 정렬  (align이 일직선으로 하다 라는 의미가 있음)*/
 }
 
-.page > section {
-  width: 50%;
-  border: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 10px;
-  padding: 10px;
+main {
+  display: flex; /*diplay 요소 flex*/
+  flex-direction: column; /*flex 요소 세로(열) 정렬*/
+  align-items: center; /* 요소 아이템 가운데 정렬 */
+  padding: 20px; /*내부 간격*/
+}
+
+h3 {
+  margin-bottom: 20px; /*아래 바깥 여백*/
+}
+
+ul {
+  list-style: none; /*리스트 스타일 제거*/
+  padding: 0;
+  display: flex; /*flex */
+  flex-direction: column; /*flex 요소 세로(열) 정렬*/
+  gap: 20px; /* 자식 요소들의 간격 설정 */
 }
