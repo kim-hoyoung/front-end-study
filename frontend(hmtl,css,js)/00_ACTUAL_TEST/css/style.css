@@ -1,0 +1,7 @@
+* {
+  box-sizing: border-box; /* border size와 관계없이 일정한 box 사이즈를 만들 수 있다. */
+}
+
+body {
+  font-family: "Spoqa Han Sans Neo", "Sans-serif";
+}
