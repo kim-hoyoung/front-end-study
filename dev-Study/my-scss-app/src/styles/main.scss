@@ -1,0 +1,8 @@
+// main.scss
+@use "./reset";
+@use "./variables";
+@use "./mixins";
+
+body {
+  font-family: variables.$font-base;
+}

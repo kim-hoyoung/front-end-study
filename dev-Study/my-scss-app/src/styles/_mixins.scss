@@ -1,0 +1,10 @@
+@use "./variables";
+
+// 이 mixin은 방향을 받아서 flex center 스타일을 쉽게 적용할 수 있게해줍니다.
+@mixin flex-center($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+  padding: variables.$padding-base;
+}
