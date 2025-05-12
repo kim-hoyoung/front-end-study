@@ -1,0 +1,94 @@
+@use "../../styles/mixins";
+@use "../../styles/variables";
+
+.card {
+  @include mixins.flex-center(column);
+  border-radius: 10px;
+  padding: 1.5rem;
+  width: 240px;
+  background-color: #fff;
+  transition: transform 0.3s ease;
+  position: relative;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    transform: translateY(-8px);
+  }
+
+  &.프론트엔드 {
+    border: 2px solid #1abc9c;
+  }
+
+  &.백엔드 {
+    border: 2px solid #9b59b6;
+  }
+
+  &.디자이너 {
+    border: 2px solid #b70e6e;
+  }
+}
+
+.avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.info {
+  text-align: center;
+
+  .name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+    color: variables.$primary-color;
+  }
+
+  .role {
+    font-size: 1rem;
+    color: #555;
+  }
+
+  .badge {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: bold;
+
+    &.신입 {
+      background-color: #ecf0f1;
+      color: #2c3e50;
+    }
+
+    &.시니어 {
+      background-color: #2ecc71;
+      color: white;
+    }
+  }
+}
+
+.button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: variables.$primary-color;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #ccc;
+  }
+}
+
+// 반응형 처리
+@media (max-width: 768px) {
+  .card {
+    width: 100%;
+  }
+}
