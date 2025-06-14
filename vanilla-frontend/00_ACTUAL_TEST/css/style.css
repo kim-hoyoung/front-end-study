@@ -325,6 +325,11 @@ footer {
   color: #fff;
 }
 
+#backtotop.show:hover {
+  cursor: pointer;
+  background-color: #2186c4;
+}
+
 #backtotop.show {
   opacity: 1;
   visibility: visible;
